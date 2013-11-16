@@ -1,0 +1,14 @@
+Get Player ships to move smoothly
+
+Make camera class and make sure it works correctly
+
+Make player ships move according to input (don't forget readme for instructions), have visuals on ships
+
+Make firing arc, display it, make sure lasers fire, difficulty levels (these affect the lasers)
+
+Laser collision detection
+
+Damage display
+
+Checking game state
+
