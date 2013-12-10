@@ -7,6 +7,7 @@
 */
 #pragma once
 #include <vector>
+#include <glm/glm.hpp>
 class Quaternion
 {
 private:
@@ -32,7 +33,7 @@ public:
 	static Quaternion slerp(Quaternion &q1, Quaternion &q2, double t); 
 	char* toString();
 	Quaternion matrixToQuaternion(float matrix[16]);
-	float* quaternionToMatrix(Quaternion &quat);
+	static glm::mat4 quaternionToMatrix(Quaternion &quat);
 
 	//Getters
 	double getW();

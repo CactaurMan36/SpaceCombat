@@ -2,6 +2,7 @@
 #include <math.h>
 #include <iostream>
 #include <math.h>
+#include <glm/gtc/type_ptr.hpp>
 
 using namespace std;
 
@@ -118,7 +119,7 @@ Quaternion Quaternion::matrixToQuaternion(float matrix[16])
 	return Quaternion(newW, newX, newY, newZ);
 }
 
-float* Quaternion::quaternionToMatrix(Quaternion &quat)
+glm::mat4 Quaternion::quaternionToMatrix(Quaternion &quat)
 {
 	float matrix[16];
 	Quaternion norm = Quaternion::normalize(quat);
@@ -134,7 +135,10 @@ float* Quaternion::quaternionToMatrix(Quaternion &quat)
 	matrix[2] = 2 * norm.x * norm.z - 2 * norm.y * norm.w;
 	matrix[5] = 2 * norm.y * norm.z + 2 * norm.x * norm.w;
 	matrix[8] = 1 - (2 * norm.x * norm.x) - (2 * norm.y * norm.y);
-	return matrix;
+
+	//GLM provides the make_mat4 function 
+	glm::mat4 matx = glm::make_mat4(matrix);
+	return matx;
 }
 
 double Quaternion::getW()

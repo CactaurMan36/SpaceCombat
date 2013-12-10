@@ -90,6 +90,9 @@
     <PostBuildEvent>
       <Command>xcopy "$(SolutionDir)GL\x86\bin" "$(SolutionDir)$(Configuration)" /y</Command>
     </PostBuildEvent>
+    <ClCompile>
+      <AdditionalIncludeDirectories>Z:\GitHub\SpaceCombat\SpaceCombat\glm-0.9.4.6\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <PostBuildEvent>

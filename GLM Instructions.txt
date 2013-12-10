@@ -1,0 +1,12 @@
+Download GLM from http://sourceforge.net/projects/ogl-math/files/
+
+Extract glm from the folder and include it in the project directory
+
+Right click on the project in the solution viewer -> Choose Configuration Properties ->
+	C/C++ -> General -> Additional Include Directories
+	
+Edit the include to have the GLM folder path
+It should be something like C:/projects/SpaceCombat/glm-0.9.4.6/glm
+
+The project should now be able to find the glm header
+
